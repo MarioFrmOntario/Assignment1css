@@ -1,0 +1,241 @@
+
+/* font style downloaded and added in the file */
+@font-face {
+	font-family: "return space";
+	src: url(Return\ Space.ttf);
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+/*setting up the body for responsiveness and to allow the background to cover entire screen and allow for scrolling for intended look and feel of the page */
+body { 
+	height: 100vh;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	color: #555753; 
+	background: url(images/image-from-rawpixel-id-5919859-original.jpg);
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-color: black;
+}
+
+/* header 1 + header 2 targeted together to clean up code*/
+header h1, h2 {
+    text-align: center;
+    font-size: 4.1em;
+	font-family: 'return space';
+	text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+    color: black;
+    text-transform: uppercase;
+    margin: 0 0 0 0;
+}
+
+/* targeting all h3s on the page to change up look for dive titles */
+.preamble h3, .explanation h3, .participation h3, .benefits h3, .requirements h3{
+	font-family: 'return space';
+	font-size:2em;
+	color: rgb(255, 255, 255);
+	text-transform: uppercase;
+	text-decoration: underline;
+}
+
+
+/* id selector + small blurb under main header*/
+#zen-summary {
+    font-size: 1em;
+	font-family: 'Press Start 2P', cursive;
+	text-transform: uppercase;
+	text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+    color: black;
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* rest of targeted class css. would have added them all together but due to margin differences and placement they remain separated */
+.preamble {
+	text-align: center;
+	font-family: 'Press Start 2P', cursive;
+	font-size:medium;
+	color: aliceblue;
+	margin: 23% 0% 0% 5%;
+	padding: 1em;
+	max-width: 500px;
+}
+
+.explanation{
+	text-align: center;
+	font-family: 'Press Start 2P', cursive;
+	font-size:medium;
+	color: aliceblue;
+	margin: 3% 0% 0% 65%;
+	padding: 1em;
+	max-width: 500px;
+}
+
+
+.participation {
+    
+		text-align: center;
+		font-family: 'Press Start 2P', cursive;
+		font-size:medium;
+		color: aliceblue;
+		margin: 35% 0% 0% 5%;
+		padding: 1em;
+		max-width: 500px;
+}
+
+
+
+.benefits{
+	text-align: center;
+	font-family: 'Press Start 2P', cursive;
+	font-size:medium;
+	color: aliceblue;
+	margin: 5% 0% 0% 65%;
+	padding: 1em;
+	max-width: 500px;
+}
+
+
+
+.requirements {
+	background-color: rgba(0, 0, 0, 0.7);
+	text-align: center;
+	font-family: 'Press Start 2P', cursive;
+	font-size:medium;
+	color: aliceblue;
+	margin: 20% 0% 0% 0%;
+	padding: 1em;
+}
+
+/*basic footer for a clean look*/
+footer {
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.9);
+	font-size: x-large;
+	font-family: 'Press Start 2P', cursive;
+	margin: 17% 0% 10% 0%;
+	font-size: xx-large;
+	text-transform: uppercase;
+}
+
+/* setting up the aside on the bottom of the page and aligning them for a cleaner layout */
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin: 1em auto;
+}
+
+.design-selection, .design-archives, .zen-resources {
+	margin: 1em; 
+	padding: 10px;
+	font-family: 'Press Start 2P', cursive;
+	font-size: medium;
+	line-height: 1.5;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	text-align: center;
+}
+
+/* type selector */
+li { 
+	list-style: none; 
+}
+
+/*attribute selector */
+
+a:link {
+	color: #4855e2;
+}
+
+/* effect on anchors and  pseudo class selector*/
+aside a:hover,.intro a:hover,.requirements a:hover,.benefits a:hover,.participation a:hover,.explanation a:hover, footer a:hover {
+
+	transition: color, font-size 0.5s ease;
+	font-size: 1.05em;
+    color: #ffee10;
+}
+
+/*pseudo element selector and descendant combinator*/
+.preamble p::first-letter, .explanation p::first-letter, .benefits p::first-letter, .requirements p::first-letter {
+    font-size: 1.3em;
+    font-weight: bolder;
+}
+
+a:visited {
+	color: #1590e2;
+}
+
+/*child combinator that i took out from pseudo selector to do the same thing for the first letters in each paragraph*/
+.participation > p::first-letter{
+    color: aliceblue;
+}
+
+/*Adjacent sibling combinator */
+h1 + h2 {
+    font-size: 3.7em;
+}
+  
+/*General sibling combinator*/
+h1 ~ h2 {
+    text-transform: uppercase;
+}
+
+
+  /*feeble attempt at responsiveness. Ran into plenty of issues with keeping the text in the right place and spent too much time on it. ended up leaving it like this to allow for smaller screen responsiveness. built the page on a 27 inch 1920x 1080 so the alignment of text etc is built on that. realized it was incredibly difficult to keep the intended look when your design is based on the background image */
+
+@media screen and (max-width: 600px) {
+    header h1, header h2 {
+        font-size: 2.8em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+	.wrapper {
+		flex-direction: column;
+	}
+
+	.design-selection, .design-archives, .zen-resources {
+		width: 90%;
+	}
+}
+
+
+/* Screens from 768px to 1023px */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .preamble, .explanation, .participation, .benefits, .requirements {
+        font-size: 2.5vw;
+        margin: 5vh auto 0 auto;
+    }
+}
+
+/* Screens from 425px to 767px */
+@media screen and (min-width: 425px) and (max-width: 767px) {
+    .preamble, .explanation, .participation, .benefits, .requirements {
+        font-size: 3.5vw;
+        margin: 7vh auto 0 auto;
+    }
+}
+
+/* Screens less than 425px */
+@media screen and (max-width: 424px) {
+    .preamble, .explanation, .participation, .benefits, .requirements {
+        font-size: 5vw;
+        margin: 10vh auto 0 auto;
+    }
+}
